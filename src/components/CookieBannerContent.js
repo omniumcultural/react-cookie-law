@@ -45,7 +45,7 @@ export default (props = {}) => {
     <div className={`react-cookie-law-dialog ${className}`} style={dialogStyle}>
       <div className="react-cookie-law-container" style={containerStyle}>
         <div className="react-cookie-law-msg" style={messageStyle}>{message}</div>
-        <div className="react-cookie-law-msg" style={messageStyle}>{message}</div>
+        
         <div className="react-cookie-law-select-pane" style={selectPaneStyle}>
           <CookieOption
             id="check-required-cookies"
