@@ -92,7 +92,7 @@ export default (props = {}) => {
         </div>
 
         <a href={policyLink} className="react-cookie-law-policy" style={policyStyle}>{privacyPolicyLinkText}</a>
-
+        <p>Test text reload</p>
         <div className="react-cookie-law-button-wrapper" style={buttonWrapperStyle}>
           {
             showDeclineButton && (
