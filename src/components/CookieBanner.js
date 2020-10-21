@@ -14,7 +14,7 @@ class CookieBanner extends React.Component {
     super(props);
 
     this.state = {
-      preferencesCookies: true,
+      preferencesCookies: false,
       statisticsCookies: false,
       marketingCookies: false,
     };
