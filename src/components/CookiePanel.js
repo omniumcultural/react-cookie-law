@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cookies from '../Cookies';
-import CookieBannerContent from './CookieBannerContent';
+import CookiePanelContent from './CookiePanelContent';
 import { isServer } from '../helpers';
 
 const CONSENT_GIVEN = 'rcl_consent_given';
@@ -9,7 +9,7 @@ const PREFERENCES_COOKIE = 'rcl_preferences_consent';
 const STATISTICS_COOKIE = 'rcl_statistics_consent';
 const MARKETING_COOKIE = 'rcl_marketing_consent';
 
-class CookieBanner extends React.Component {
+class CookiePanel extends React.Component {
   constructor(props) {
     super(props);
 
@@ -101,23 +101,8 @@ class CookieBanner extends React.Component {
     this.forceUpdate();
   }
 
-  decline() {
-    const {
-      onDeclinePreferences = Function,
-      onDeclineStatistics = Function,
-      onDeclineMarketing = Function,
-    } = this.props;
-
-    this.cookies.set(CONSENT_GIVEN);
-    this.cookies.remove(PREFERENCES_COOKIE);
-    this.cookies.remove(STATISTICS_COOKIE);
-    this.cookies.remove(MARKETING_COOKIE);
-
-    onDeclinePreferences();
-    onDeclineStatistics();
-    onDeclineMarketing();
-
-    this.forceUpdate();
+  onPrefer() {
+    console.log("Activem el segon panel")
   }
 
   consetsCallback() {
@@ -167,9 +152,9 @@ class CookieBanner extends React.Component {
       preferencesOptionText,
       statisticsOptionText,
       marketingOptionText,
-      showDeclineButton,
+      showPreferButton,
       acceptButtonText,
-      declineButtonText,
+      PreferButtonText,
       showPreferencesOption,
       showStatisticsOption,
       showMarketingOption,
@@ -190,9 +175,9 @@ class CookieBanner extends React.Component {
       preferencesOptionText,
       statisticsOptionText,
       marketingOptionText,
-      showDeclineButton,
+      showPreferButton,
       acceptButtonText,
-      declineButtonText,
+      PreferButtonText,
       showPreferencesOption,
       showStatisticsOption,
       showMarketingOption,
@@ -203,11 +188,11 @@ class CookieBanner extends React.Component {
       onConfirm: this.confirm,
     };
 
-    return (<CookieBannerContent {...contentProps} />);
+    return (<CookiePanelContent {...contentProps} />);
   }
 }
 
-CookieBanner.protoTypes = {
+CookiePanel.protoTypes = {
   className: PropTypes.string,
   styles: PropTypes.object,
   message: PropTypes.string.isRequired,
@@ -219,8 +204,8 @@ CookieBanner.protoTypes = {
   statisticsOptionText: PropTypes.string,
   marketingOptionText: PropTypes.string,
   acceptButtonText: PropTypes.string,
-  declineButtonText: PropTypes.string,
-  showDeclineButton: PropTypes.bool,
+  PreferButtonText: PropTypes.string,
+  showPreferButton: PropTypes.bool,
   dismissOnScroll: PropTypes.bool,
   showPreferencesOption: PropTypes.bool,
   showStatisticsOption: PropTypes.bool,
@@ -234,4 +219,4 @@ CookieBanner.protoTypes = {
   onDeclineMarketing: PropTypes.func,
 };
 
-export default CookieBanner;
+export default CookiePanel;
