@@ -1,5 +1,4 @@
 import React from 'react';
-import CookieOption from './CookieOption';
 import bannerStyle from './bannerStyle';
 
 export default (props = {}) => {
@@ -9,20 +8,9 @@ export default (props = {}) => {
     message = 'No text',
     policyLink = '/#',
     privacyPolicyLinkText = 'Privacy Policy',
-    necessaryOptionText = 'Necessary',
-    preferencesOptionText = 'Preferences',
-    statisticsOptionText = 'Statistics',
-    marketingOptionText = 'Marketing',
     showPreferButton = true,
     acceptButtonText = 'Accept',
     PreferButtonText = 'Preferències',
-    showPreferencesOption = true,
-    showStatisticsOption = true,
-    showMarketingOption = true,
-    onTogglePreferencesCookies = Function,
-    onToggleStatisticsCookies = Function,
-    onToggleMarketingCookies = Function,
-    onDecline = Function,
     onConfirm = Function,
   } = props;
 
@@ -31,15 +19,10 @@ export default (props = {}) => {
     container: containerStyle,
     message: messageStyle,
     policy: policyStyle,
-    selectPane: selectPaneStyle,
-    optionWrapper: optionWrapperStyle,
-    optionLabel: optionLabelStyle,
-    checkbox: checkboxStyle,
     buttonWrapper: buttonWrapperStyle,
     button: buttonStyle,
   } = { ...bannerStyle, ...styles };
 
-  const cookieOptionStyle = { optionWrapperStyle, optionLabelStyle, checkboxStyle };
 
   return (
     <div className={`react-cookie-law-dialog ${className}`} style={dialogStyle}>
