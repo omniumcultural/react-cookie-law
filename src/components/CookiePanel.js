@@ -119,7 +119,7 @@ class CookiePanel extends React.Component {
   }
 
   onPrefer() {
-    this.forceUpdate();
+    this.setPas(false);
   }
 
   consetsCallback() {
