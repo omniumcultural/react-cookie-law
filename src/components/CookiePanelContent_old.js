@@ -13,9 +13,9 @@ export default (props = {}) => {
     preferencesOptionText = 'Preferences',
     statisticsOptionText = 'Statistics',
     marketingOptionText = 'Marketing',
-    showDeclineButton = false,
+    showPreferButton = true,
     acceptButtonText = 'Accept',
-    declineButtonText = 'Decline',
+    PreferButtonText = 'Preferències',
     showPreferencesOption = true,
     showStatisticsOption = true,
     showMarketingOption = true,
@@ -46,56 +46,13 @@ export default (props = {}) => {
       <div className="react-cookie-law-container" style={containerStyle}>
         <div className="react-cookie-law-msg" style={messageStyle}>{message}</div>
         
-        <div className="react-cookie-law-select-pane" style={selectPaneStyle}>
-          <CookieOption
-            id="check-required-cookies"
-            text={necessaryOptionText}
-            styles={cookieOptionStyle}
-            disabled
-            checked
-          />
-
-          {
-            showPreferencesOption && (
-              <CookieOption
-                id="check-preferences-cookies"
-                text={preferencesOptionText}
-                styles={cookieOptionStyle}
-                onChange={onTogglePreferencesCookies}
-              />
-            )
-          }
-
-          {
-            showStatisticsOption && (
-              <CookieOption
-                id="check-statistics-cookies"
-                text={statisticsOptionText}
-                styles={cookieOptionStyle}
-                onChange={onToggleStatisticsCookies}
-              />
-            )
-          }
-
-          {
-            showMarketingOption && (
-              <CookieOption
-                id="check-marketing-cookies"
-                text={marketingOptionText}
-                styles={cookieOptionStyle}
-                onChange={onToggleMarketingCookies}
-              />
-            )
-          }
-        </div>
-
         <a href={policyLink} className="react-cookie-law-policy" style={policyStyle}>{privacyPolicyLinkText}</a>
         
         <div className="react-cookie-law-button-wrapper" style={buttonWrapperStyle}>
           {
-            showDeclineButton && (
-              <button type="button" className="react-cookie-law-decline-btn" style={buttonStyle} onClick={() => onDecline()}>
-                <span>{declineButtonText}</span>
+            showPreferButton && (
+              <button type="button" className="react-cookie-law-decline-btn" style={buttonStyle} onClick={() => onPrefer()}>
+                <span>{PreferButtonText}</span>
               </button>
             )
           }
