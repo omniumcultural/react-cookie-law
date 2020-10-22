@@ -22,6 +22,7 @@ class CookiePanel extends React.Component {
     this.onScroll = this.onScroll.bind(this);
     this.confirm = this.confirm.bind(this);
     this.decline = this.decline.bind(this);
+    this.onPrefer = this.onPrefer.bind(this);
     this.consetsCallback = this.consetsCallback.bind(this);
 
     this.cookies = new Cookies(this.props.wholeDomain);
