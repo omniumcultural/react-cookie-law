@@ -203,6 +203,7 @@ class CookiePanel extends React.Component {
       onToggleMarketingCookies: this.onToggleMarketingCookies,
       onDecline: this.decline,
       onConfirm: this.confirm,
+      onPrefer: this.onPrefer
     };
 
     return (<CookiePanelContent {...contentProps} />);

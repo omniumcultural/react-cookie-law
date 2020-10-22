@@ -12,6 +12,7 @@ export default (props = {}) => {
     acceptButtonText = 'Accept',
     PreferButtonText = 'Preferències',
     onConfirm = Function,
+    onPrefer = Function
   } = props;
 
   const {
