@@ -98,6 +98,25 @@ class CookiePanel extends React.Component {
     this.forceUpdate();
   }
 
+  decline() {
+    const {
+      onDeclinePreferences = Function,
+      onDeclineStatistics = Function,
+      onDeclineMarketing = Function,
+    } = this.props;
+
+    this.cookies.set(CONSENT_GIVEN);
+    this.cookies.remove(PREFERENCES_COOKIE);
+    this.cookies.remove(STATISTICS_COOKIE);
+    this.cookies.remove(MARKETING_COOKIE);
+
+    onDeclinePreferences();
+    onDeclineStatistics();
+    onDeclineMarketing();
+
+    this.forceUpdate();
+  }
+
   onPrefer() {
     console.log("Activem el segon panel")
   }
