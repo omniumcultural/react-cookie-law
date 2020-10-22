@@ -1,8 +1,8 @@
 //import React from 'react';
 //import CookieBanner from './components/CookieBanner';
 //import CookiePanel from './components/CookiePanel';
-
 export {default as CookieBanner} from './components/CookieBanner';
+export {default as CookieBanner2} from './components/CookieBanner';
 export {default as CookiePanel} from './components/CookiePanel';
 
 
