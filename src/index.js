@@ -8,5 +8,4 @@ const CookieBannerUniversal = props => (isServer() ? null : <CookieBanner {...pr
 const CookiePanelUniversal = props => (isServer() ? null : <CookiePanel {...props} />);
 
 
-export { CookieBannerUniversal as CookieBanner };
-export { CookiePanelUniversal as CookiePanel };
+export { CookieBannerUniversal as CookieBanner, CookiePanelUniversal as CookiePanel };
