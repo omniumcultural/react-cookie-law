@@ -119,7 +119,7 @@ class CookiePanel extends React.Component {
   }
 
   onPrefer() {
-    console.log("Activem el segon panel")
+    this.forceUpdate();
   }
 
   consetsCallback() {
