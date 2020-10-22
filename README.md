@@ -1,3 +1,24 @@
+
+# Customization
+
+## Develop
+When there is a new change, you have to do a build and upload it to git.
+It would be similar to make a publish of the package.
+```
+npm run build
+```
+## Package
+To install package.
+```
+npm install git+https://github.com/omniumcultural/react-cookie-law.git
+```
+To upgrade package. You have to do it manually to see the new changes in development.
+```
+npm update @omniumcultural/react-cookie-law
+```
+
+
+
 # React Cookie Law
 
 [![npm version](https://badge.fury.io/js/%40palmabit%2Freact-cookie-law.svg)](https://badge.fury.io/js/%40palmabit%2Freact-cookie-law) [![Build Status](https://travis-ci.org/Palmabit-IT/react-cookie-law.svg?branch=master)](https://travis-ci.org/Palmabit-IT/react-cookie-law) [![Coverage Status](https://coveralls.io/repos/github/Palmabit-IT/react-cookie-law/badge.svg?branch=master)](https://coveralls.io/github/Palmabit-IT/react-cookie-law?branch=master)
