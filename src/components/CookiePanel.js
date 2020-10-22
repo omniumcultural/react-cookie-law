@@ -119,6 +119,7 @@ class CookiePanel extends React.Component {
   }
 
   onPrefer() {
+    console.log(pas);
     this.setPas(false);
   }
 
