@@ -10,3 +10,4 @@ const CookiePanelUniversal = props => (isServer() ? null : <CookiePanel {...prop
 
 export { CookieBannerUniversal as CookieBanner };
 export { CookiePanelUniversal as CookiePanel };
+export { CookieBannerUniversal as CookieBanner2 };
