@@ -11,7 +11,7 @@ export default (props = {}) => {
     showPreferButton = true,
     acceptButtonText = 'Accept',
     PreferButtonText = 'Preferències',
-    onConfirm = Function,
+    onConfirmAll = Function,
     onPrefer = Function
   } = props;
 
@@ -41,7 +41,7 @@ export default (props = {}) => {
             )
           }
 
-          <button type="button" className="react-cookie-law-accept-btn" style={buttonStyle} onClick={() => onConfirm()}>
+          <button type="button" className="react-cookie-law-accept-btn" style={buttonStyle} onClick={() => onConfirmAll()}>
             <span>{acceptButtonText}</span>
           </button>
         </div>

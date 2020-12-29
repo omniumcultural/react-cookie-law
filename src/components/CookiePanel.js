@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Cookies from '../Cookies';
 import CookiePanelContent from './CookiePanelContent';
+import CookieBannerContent from './CookieBannerContent';
 import { isServer } from '../helpers';
 
 const CONSENT_GIVEN = 'rcl_consent_given';
@@ -17,10 +18,15 @@ class CookiePanel extends React.Component {
       preferencesCookies: false,
       statisticsCookies: false,
       marketingCookies: false,
+      previewPhase: true,
     };
 
     this.onScroll = this.onScroll.bind(this);
+    this.onTogglePreferencesCookies = this.onTogglePreferencesCookies.bind(this);
+    this.onToggleStatisticsCookies = this.onToggleStatisticsCookies.bind(this);
+    this.onToggleMarketingCookies = this.onToggleMarketingCookies.bind(this);
     this.confirm = this.confirm.bind(this);
+    this.confirmAll = this.confirmAll.bind(this);
     this.decline = this.decline.bind(this);
     this.onPrefer = this.onPrefer.bind(this);
     this.consetsCallback = this.consetsCallback.bind(this);
@@ -99,6 +105,14 @@ class CookiePanel extends React.Component {
     this.forceUpdate();
   }
 
+  confirmAll() {
+    this.cookies.set(CONSENT_GIVEN);
+    this.cookies.set(PREFERENCES_COOKIE);
+    this.cookies.set(STATISTICS_COOKIE);
+    this.cookies.set(MARKETING_COOKIE);
+    this.forceUpdate();
+  }
+
   decline() {
     const {
       onDeclinePreferences = Function,
@@ -119,7 +133,7 @@ class CookiePanel extends React.Component {
   }
 
   onPrefer() {
-    console.log("Activem el segon panel")
+    this.setState({ previewPhase: false})
   }
 
   consetsCallback() {
@@ -203,10 +217,15 @@ class CookiePanel extends React.Component {
       onToggleMarketingCookies: this.onToggleMarketingCookies,
       onDecline: this.decline,
       onConfirm: this.confirm,
+      onConfirmAll: this.confirmAll,
       onPrefer: this.onPrefer
     };
 
-    return (<CookiePanelContent {...contentProps} />);
+    if (this.state.previewPhase) {
+      return (<CookiePanelContent {...contentProps} />);
+    } else {
+      return (<CookieBannerContent {...contentProps} />);
+    }
   }
 }
 
